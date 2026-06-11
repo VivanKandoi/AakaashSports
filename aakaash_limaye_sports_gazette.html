@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Mumbai Sports Gazette — Special Edition</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Oswald:wght@400;600;700&family=Roboto+Condensed:wght@400;700&display=swap');
+
+  :root {
+    --ink: #1a1008;
+    --paper: #f5f0e8;
+    --rule: #2c1a08;
+    --accent: #8b1a1a;
+    --gold: #b8860b;
+    --mid: #5c4a2a;
+    --light-rule: #c8b89a;
+    --column-gap: 18px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #d0c4b0;
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--ink);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .newspaper {
+    background: var(--paper);
+    max-width: 1100px;
+    margin: 24px auto;
+    padding: 0;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.35);
+  }
+
+  /* ---- MASTHEAD ---- */
+  .masthead {
+    border-bottom: 4px double var(--rule);
+    padding: 18px 32px 12px;
+    text-align: center;
+    background: var(--paper);
+    position: relative;
+  }
+
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 6px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--mid);
+    text-transform: uppercase;
+  }
+
+  .paper-name {
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 72px;
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: -1px;
+    margin: 4px 0;
+  }
+
+  .masthead-sub {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 4px 0;
+    margin: 6px 0;
+  }
+
+  .edition-banner {
+    background: var(--accent);
+    color: #f5f0e8;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 5px 0;
+    margin-top: 8px;
+  }
+
+  /* ---- BODY ---- */
+  .body-wrap {
+    padding: 0 32px 32px;
+  }
+
+  /* ---- SECTION RULES ---- */
+  .section-rule {
+    border: none;
+    border-top: 3px solid var(--rule);
+    margin: 18px 0 12px;
+  }
+
+  .section-rule.thin { border-top-width: 1px; margin: 12px 0 8px; }
+  .section-rule.double { border-top: 4px double var(--rule); }
+
+  .section-head {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  /* ---- COLUMNS ---- */
+  .cols-3 { columns: 3; column-gap: var(--column-gap); }
+  .cols-2 { columns: 2; column-gap: var(--column-gap); }
+  .cols-4 { columns: 4; column-gap: var(--column-gap); }
+
+  .col-span { column-span: all; }
+
+  .col-rule { column-rule: 1px solid var(--light-rule); }
+
+  /* ---- HEADLINES ---- */
+  .headline-banner {
+    font-family: 'Playfair Display', serif;
+    font-size: 58px;
+    font-weight: 900;
+    line-height: 1.0;
+    text-align: center;
+    color: var(--ink);
+    margin: 14px 0 6px;
+  }
+
+  .headline-deck {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+
+  .byline {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+
+  h2.col-head {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+
+  h3.col-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+
+  p { margin-bottom: 8px; text-align: justify; }
+
+  /* ---- PULL QUOTE ---- */
+  .pull-quote {
+    border-top: 3px solid var(--rule);
+    border-bottom: 3px solid var(--rule);
+    margin: 14px 8px;
+    padding: 10px 12px;
+    break-inside: avoid;
+  }
+
+  .pull-quote blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .pull-quote cite {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  /* ---- SIDEBAR ---- */
+  .sidebar {
+    background: #ede4d0;
+    border-left: 4px solid var(--accent);
+    padding: 12px 14px;
+    margin: 12px 0;
+    break-inside: avoid;
+  }
+
+  .sidebar h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  /* ---- STATS TABLE ---- */
+  table.stats {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+  }
+
+  table.stats th {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 5px 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: left;
+  }
+
+  table.stats td {
+    padding: 4px 8px;
+    border-bottom: 1px solid var(--light-rule);
+  }
+
+  table.stats tr:nth-child(even) td { background: #ede4d0; }
+
+  .stat-bar {
+    display: inline-block;
+    height: 8px;
+    background: var(--accent);
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+
+  /* ---- BREAKING NEWS ---- */
+  .breaking-item {
+    border-top: 2px solid var(--rule);
+    padding: 8px 0;
+    break-inside: avoid;
+  }
+
+  .breaking-tag {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: white;
+    padding: 1px 5px;
+    margin-right: 5px;
+  }
+
+  .breaking-hed {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 4px 0 3px;
+  }
+
+  /* ---- AWARDS ---- */
+  .award-item {
+    border-bottom: 1px solid var(--light-rule);
+    padding: 8px 0;
+    break-inside: avoid;
+  }
+
+  .award-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .award-winner {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 2px 0;
+  }
+
+  /* ---- POWER RANKINGS ---- */
+  .rank-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--light-rule);
+    break-inside: avoid;
+  }
+
+  .rank-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    min-width: 32px;
+  }
+
+  .rank-text strong {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  /* ---- QUOTES ---- */
+  .quote-item {
+    border-left: 3px solid var(--gold);
+    padding: 6px 10px;
+    margin-bottom: 10px;
+    break-inside: avoid;
+  }
+
+  .quote-item p { font-style: italic; margin-bottom: 2px; }
+
+  .quote-attr {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--mid);
+  }
+
+  /* ---- EDITORIAL ---- */
+  .editorial-box {
+    border: 2px solid var(--rule);
+    padding: 18px 20px;
+    margin: 14px 0;
+    background: #f0e8d6;
+  }
+
+  /* ---- FINAL PAGE ---- */
+  .final-quote {
+    text-align: center;
+    padding: 30px 60px;
+    border-top: 4px double var(--rule);
+    border-bottom: 4px double var(--rule);
+    margin: 20px 0;
+  }
+
+  .final-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--ink);
+    text-align: center;
+  }
+
+  .final-quote .attr {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--mid);
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .footer-strip {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    padding: 8px;
+    text-transform: uppercase;
+  }
+
+  /* photo placeholder */
+  .photo-box {
+    background: #ddd4bc;
+    border: 1px solid var(--light-rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 10px 0;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    color: var(--mid);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    break-inside: avoid;
+  }
+
+  .trophy { font-size: 36px; display: block; margin-bottom: 6px; }
+
+  .drop-cap::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    float: left;
+    line-height: 0.85;
+    margin: 4px 6px 0 0;
+    color: var(--accent);
+  }
+
+  .career-phase {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+
+  .index-score {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .hof-badge {
+    text-align: center;
+    border: 3px solid var(--gold);
+    padding: 10px;
+    margin: 10px 0;
+    break-inside: avoid;
+  }
+
+  .hof-badge .hof-year {
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .hof-badge .hof-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .divider-ornament {
+    text-align: center;
+    color: var(--mid);
+    font-size: 16px;
+    margin: 6px 0;
+    letter-spacing: 8px;
+  }
+
+  @media print {
+    body { background: white; }
+    .newspaper { box-shadow: none; margin: 0; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="newspaper">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="masthead-top">
+      <span>VOL. XXI &nbsp;·&nbsp; NO. 1</span>
+      <span>SPECIAL COLLECTOR'S EDITION</span>
+      <span>JUNE 2025 &nbsp;·&nbsp; MUMBAI</span>
+    </div>
+    <div class="paper-name">The Mumbai Sports Gazette</div>
+    <div class="masthead-sub">The Definitive Record of Sporting Fandom &nbsp;·&nbsp; Established on the Day Aakaash Limaye Was Born</div>
+    <div class="masthead-top" style="margin-top:6px; margin-bottom:0;">
+      <span>CRICKET &nbsp;·&nbsp; FOOTBALL &nbsp;·&nbsp; BASKETBALL &nbsp;·&nbsp; NFL &nbsp;·&nbsp; BASEBALL &nbsp;·&nbsp; TENNIS &nbsp;·&nbsp; FORMULA 1 &nbsp;·&nbsp; SNOOKER</span>
+      <span>PRICE: YOUR UNDYING LOYALTY</span>
+    </div>
+    <div class="edition-banner">⚡ SPECIAL BIRTHDAY EDITION — CELEBRATING 21 YEARS OF GREATNESS ⚡</div>
+  </div>
+
+  <div class="body-wrap">
+
+    <!-- ============================================================ -->
+    <!-- SECTION 1: COVER PAGE -->
+    <!-- ============================================================ -->
+    <hr class="section-rule double" style="margin-top:16px;">
+    <div style="text-align:center;" class="section-head">front page</div>
+
+    <div class="headline-banner">A Legend Turns 21</div>
+    <div class="headline-deck">In a career spanning two extraordinary decades, Mumbai's most dedicated sports fan enters the prime of his storied life</div>
+    <hr class="section-rule thin">
+    <div style="text-align:center;" class="byline">By PRIYA SHENOY, Chief Sports Correspondent &nbsp;·&nbsp; RAJIV MAHAJAN, Fandom Desk Editor</div>
+
+    <div class="cols-3 col-rule" style="margin-top:10px;">
+      <p class="drop-cap">There are moments in sporting history that transcend the scoreboard. The 1983 World Cup final. The 2008 Champions League triumph in Moscow. LeBron's block in Game 7. These are not merely events — they are episodes in a grander story about human passion, perseverance, and the extraordinary capacity of ordinary people to care about something with every fibre of their being.</p>
+
+      <p>This reporter has covered sport for seventeen years. I have sat in press boxes at Wankhede Stadium and Old Trafford, at the Staples Center and the Linfield Road end. I have interviewed champions and commoners alike. But rarely — <em>rarely</em> — does one encounter a figure whose commitment to the sporting world is so comprehensive, so unwavering, and so genuinely impressive that it demands documentation.</p>
+
+      <p>Aakaash Limaye of Mumbai, India, turns 21 today. To the uninformed observer, this might appear unremarkable. To those of us who have tracked his career with the attention it deserves, this birthday represents something far more significant: the moment a prodigiously talented sports fan steps fully into his prime.</p>
+
+      <div class="pull-quote">
+        <blockquote>"You don't just follow eight sports. You become them. Aakaash doesn't watch sport — he carries it."</blockquote>
+        <cite>— Anonymous source close to the subject</cite>
+      </div>
+
+      <p>Born into a city that lives and breathes cricket, young Aakaash displayed early and unmistakable signs of what analysts would later term "pan-sport polyvalence" — an almost superhuman ability to invest emotionally across multiple disciplines, time zones, and hemispheres simultaneously. Where other fans pick a lane, Aakaash chose the entire motorway.</p>
+
+      <p>His portfolio reads like a sports executive's fever dream. In cricket: the Mumbai Indians, five-time IPL champions and the most decorated franchise in the tournament's history, a team Aakaash has supported through every title, every slog-over, every Rohit Sharma pull shot dispatched majestically to the mid-wicket boundary. In football: Manchester United, the most storied club in English football history, with whom Aakaash's loyalty has been absolute and unconditional — the mark of a true supporter, not a fair-weather visitor.</p>
+
+      <p>Then there is basketball — and here the story takes a particular and illuminating turn. Aakaash is not, strictly speaking, a Los Angeles Lakers fan. He is a <em>LeBron James</em> fan: a franchise-agnostic, continent-spanning devotee who has followed LeBron from Cleveland to Miami to Los Angeles with the quiet, unshakeable conviction of someone who understands that you don't follow a jersey — you follow greatness. The internet has a word for this level of devotion. Aakaash deploys it unironically and correctly. American football brings Philadelphia, the passionate, brilliant Eagles — a club whose fanbase is as intense as any on the planet. Baseball adds the Los Angeles Dodgers, perennial World Series contenders whose blue runs deep in Aakaash's blood despite being separated from Dodger Stadium by roughly twelve thousand kilometres.</p>
+
+      <p>His individual sports loyalties complete a picture of impeccable taste. Roger Federer: not merely a tennis player, but the closest thing sport has produced to a human argument for grace. McLaren: the team of Senna, of Häkkinen, and of a papaya-orange resurgence that has delighted Formula 1 fans worldwide. And Ronnie O'Sullivan — perhaps the single most gifted snooker player to have ever picked up a cue, a man whose genius at the baize is matched only by his capacity to be endlessly compelling.</p>
+
+      <p>In each case, Aakaash has not chosen the convenient team or the easy champion. He has chosen according to something rarer: genuine feeling. This, ultimately, is what separates a fan from a <em>great</em> fan.</p>
+
+      <p>Today, The Mumbai Sports Gazette dedicates its entire edition to the man, the myth, and the many late nights spent watching NBA games at 6:30 in the morning. Twenty-one years old. Already a legend.</p>
+    </div>
+
+    <div style="text-align:center; margin: 8px 0;">
+      <div class="divider-ornament">— ✦ ✦ ✦ —</div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2: THE FIRST 21 SEASONS -->
+    <!-- ============================================================ -->
+    <hr class="section-rule double">
+    <div class="section-head">feature — retrospective</div>
+    <h2 class="col-head" style="text-align:center; font-size:32px;">The First 21 Seasons:<br>A Career in Review</h2>
+    <div style="text-align:center;" class="byline">By ARJUN KAPOOR, Senior Features Writer</div>
+    <hr class="section-rule thin">
+
+    <div class="cols-2 col-rule">
+      <div>
+        <div class="career-phase">Early Career (Ages 0–7) · The Foundation Years</div>
+        <p>Every great sporting career begins somewhere. For Aakaash Limaye, it began not with a trophy or a contract, but with a television set and a cricketing city that treated the IPL like a municipal religion. Pre-school records — consulted by this paper under significant duress — indicate that young Aakaash displayed what developmental psychologists call "selective attentional focus during Mumbai Indians broadcasts," which everyone else in the family called "refusing to go to bed during the final overs."</p>
+        <p>These were formative years. Scouts (his parents) noted exceptional early promise: the ability to recognise team colours before he could read, and a precocious understanding of Wankhede's dew factor that would have impressed more senior analysts. The foundations of loyalty were laid here, and they were laid deep.</p>
+      </div>
+      <div>
+        <div class="career-phase">Development Years (Ages 8–14) · The Expansion Phase</div>
+        <p>The truly great sports fans do not stop at one sport. It is around this phase that Aakaash began what historians may one day call "The Portfolio Expansion." Manchester United arrived — and with it came those legendary European nights, the drama of a club with a history heavy enough to fill bookshelves. Then came the NBA, entering through the Los Angeles Lakers, and suddenly Aakaash was watching basketball at times his circadian rhythm had not been consulted about.</p>
+        <p>The development years are characterised by what scouts assess as "elite knowledge acquisition" — the voracious consumption of statistics, histories, team lore, and player biographies that transforms a casual viewer into a genuine authority. By fourteen, Aakaash had opinions that would have held up at a press conference.</p>
+      </div>
+    </div>
+
+    <div class="cols-2 col-rule" style="margin-top:10px;">
+      <div>
+        <div class="career-phase">Breakthrough Years (Ages 15–20) · Peak Fandom Realised</div>
+        <p>Formula 1 and snooker entered the picture. One must pause to appreciate the aesthetic intelligence required to find oneself drawn to McLaren's papaya orange and to Ronnie O'Sullivan's effortless mastery at the same time — these are not random selections. They represent a considered, cultivated sporting palate. The Philadelphia Eagles and the Los Angeles Dodgers completed the constellation, giving Aakaash a supporting portfolio that spans three American sports and four continents of competition.</p>
+        <p>By age twenty, insiders reported that Aakaash's knowledge of the offside trap, the IPL auction strategy, NBA advanced metrics, MLB pitching rotations, F1 tyre degradation, and snooker safety play was "frankly unnerving." This is not criticism. This is admiration.</p>
+      </div>
+      <div>
+        <div class="career-phase">Age 21: Entering His Prime</div>
+        <p>And so we arrive here. Twenty-one. The age at which cricketers are supposed to be "maturing nicely," at which footballers are "beginning to fulfil their potential," at which tennis prodigies are "just getting started." For Aakaash, twenty-one means something richer: it is the moment a career of remarkable sporting passion moves from promise to establishment.</p>
+        <p>His trajectory suggests the very best is still ahead. The teams he has chosen are not declining institutions — they are living, evolving entities capable of producing the next great triumph. Aakaash will be there for all of it. That is the quiet genius of his selections: he has backed franchises and individuals capable of giving him decades more to celebrate.</p>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 3: THE AAKAASH INDEX -->
+    <!-- ============================================================ -->
+    <hr class="section-rule double">
+    <div class="section-head">scouting report</div>
+    <h2 class="col-head" style="text-align:center; font-size:28px;">The Aakaash Index: Official Scouting Report</h2>
+    <div style="text-align:center;" class="byline">Compiled by The Gazette Analytics Desk</div>
+    <hr class="section-rule thin">
+
+    <table class="stats">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Rating</th>
+          <th>Score</th>
+          <th>Analyst Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Loyalty</strong></td>
+          <td><span class="stat-bar" style="width:95px;"></span> Elite</td>
+          <td>97/100</td>
+          <td>Generational-level commitment. Has never switched allegiances. Comparable to the kind of devotion that gets a plaque on a stadium wall.</td>
+        </tr>
+        <tr>
+          <td><strong>Sports IQ</strong></td>
+          <td><span class="stat-bar" style="width:90px;"></span> Elite</td>
+          <td>93/100</td>
+          <td>Crosses disciplines seamlessly. Can shift from discussing F1 tyre compounds to snooker long-range potting in under eight seconds. Tests confirm.</td>
+        </tr>
+        <tr>
+          <td><strong>Match-Day Commitment</strong></td>
+          <td><span class="stat-bar" style="width:88px;"></span> Elite</td>
+          <td>90/100</td>
+          <td>Full emotional investment logged across all formats. Sleep deprivation not treated as a deterrent but as an investment in the fandom.</td>
+        </tr>
+        <tr>
+          <td><strong>Championship Faith</strong></td>
+          <td><span class="stat-bar" style="width:95px;"></span> Elite</td>
+          <td>96/100</td>
+          <td>Maintains belief in each team simultaneously. An impressive multitasking of optimism that most fans cannot sustain even for one club.</td>
+        </tr>
+        <tr>
+          <td><strong>Competitive Spirit</strong></td>
+          <td><span class="stat-bar" style="width:85px;"></span> Excellent</td>
+          <td>88/100</td>
+          <td>Takes defeats personally but constructively. Statistical analysis shows an unusual ability to begin believing in the next match approximately 47 minutes after a loss.</td>
+        </tr>
+        <tr>
+          <td><strong>Transfer Rumour Monitoring</strong></td>
+          <td><span class="stat-bar" style="width:93px;"></span> Elite</td>
+          <td>95/100</td>
+          <td>Response time to breaking transfer news estimated at under 90 seconds. The only area rated slightly below perfect is that he occasionally reads Fabrizio Romano before eating breakfast, which nutritionists query.</td>
+        </tr>
+        <tr>
+          <td><strong>Late-Night Viewing Endurance</strong></td>
+          <td><span class="stat-bar" style="width:99px;"></span> Legendary</td>
+          <td>99/100</td>
+          <td>Following five North American sports leagues from Mumbai requires watching events scheduled for times that are, biologically speaking, not meant for human consciousness. Aakaash has done this consistently for years. Remarkable.</td>
+        </tr>
+        <tr>
+          <td><strong>Celebration Ability</strong></td>
+          <td><span class="stat-bar" style="width:91px;"></span> Elite</td>
+          <td>92/100</td>
+          <td>Unreserved, full-throated joy when teams deliver. Analysts describe celebrations as "authentic, loud, and occasionally alarming to people who weren't aware a game was on."</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="sidebar" style="margin-top:10px;">
+      <h4>⚡ Composite Score</h4>
+      <p><span class="index-score">94.0 / 100</span> — <strong>LEGENDARY TIER</strong>. The Aakaash Index places him in the 99th percentile of all sports fans assessed by this publication in its 21-year history. The analytical consensus: "He simply cares more, and knows more, than is strictly reasonable — which is exactly what great fans do."</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 4: HALL OF FAME -->
+    <!-- ============================================================ -->
+    <hr class="section-rule double">
+    <div class="section-head">hall of fame — induction ceremony</div>
+
+    <div class="cols-2 col-rule">
+      <div>
+        <h2 class="col-head">Inducted: Aakaash Limaye<br>The Mumbai Sports Gazette Hall of Fame, Class of 2025</h2>
+        <div class="byline">Induction Address by HOF Committee Chairman</div>
+
+        <div class="hof-badge">
+          <div class="hof-year">2025</div>
+          <div class="hof-name">AAKAASH LIMAYE</div>
+          <div style="font-family:'Roboto Condensed',sans-serif; font-size:10px; text-transform:uppercase; letter-spacing:0.15em; color:var(--mid);">Mumbai, India · Pan-Sport Fan · Class of 2025</div>
+          <div style="font-size:24px; margin-top:6px;">🏆</div>
+        </div>
+
+        <p class="drop-cap">The Hall of Fame exists not for the casual observer, not for the fair-weather supporter who retreats when the going gets difficult, but for those whose relationship with sport rises to the level of genuine devotion. In twenty-one years of doing this, the Committee has rarely encountered a candidate whose case for induction was so clear, so complete, and so entirely unambiguous.</p>
+
+        <p>Aakaash Limaye is inducted today on five grounds.</p>
+
+        <p><strong>First, breadth without superficiality.</strong> Following eight sports at the level Aakaash does is not the same as vaguely knowing the rules of eight sports. His knowledge of each is substantive, historical, and tactically grounded. He could hold a credible conversation about McLaren's undercut strategy, about the Mumbai Indians' auction philosophy, and about Roger Federer's serve-and-volley legacy — all in the same afternoon.</p>
+
+        <p><strong>Second, the quality of his selections.</strong> Mumbai Indians: the most successful franchise in IPL history. Manchester United: the most decorated club in English football. LeBron James: the single most followed individual in basketball history, whose career Aakaash has tracked across three franchises with the loyalty of a biographer. Each choice reflects an understanding of sporting greatness rather than proximity or convenience.</p>
+      </div>
+      <div>
+        <p><strong>Third, loyalty across difficulty.</strong> The Hall of Fame does not honour fans who only show up for trophies. Any edition of any team can attract supporters during a title run. What Aakaash has demonstrated is the ability to maintain absolute faith through every challenge, every rebuilding season, every crushing near-miss — and to return, each time, with belief intact. This is the rarest quality in fandom.</p>
+
+        <p><strong>Fourth, the elevation of individual excellence.</strong> His support for Roger Federer represents a particular sophistication: the ability to follow an individual athlete as one follows a team — to understand, appreciate, and celebrate the career arc of a human being who has given everything to their sport. Federer, the greatest ambassador the game has known, deserved precisely this quality of supporter.</p>
+
+        <p><strong>Fifth, Ronnie O'Sullivan.</strong> Following snooker from Mumbai, maintaining investment in a sport broadcast at awkward hours, appreciating the genius of the Rocket's cue ball control — this alone would commend Aakaash to the Committee's attention. That he does this alongside everything else makes it extraordinary.</p>
+
+        <div class="pull-quote">
+          <blockquote>"The Hall of Fame has seen passionate fans before. We have not often seen one this complete."</blockquote>
+          <cite>— Hall of Fame Committee, Official Statement</cite>
+        </div>
+
+        <p>Aakaash Limaye: inducted on the occasion of his twenty-first birthday, with the full recognition and admiration of this institution. May the next twenty-one years bring every championship his teams have promised and every grace note his athletes have in them.</p>
+
+        <p>The plaque is already engraved. The coffee is on.</p>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 5: BREAKING NEWS -->
+    <!-- ============================================================ -->
+    <hr class="section-rule double">
+    <div class="section-head">breaking news desk</div>
+
+    <div class="cols-3 col-rule">
+      <div class="breaking-item">
+        <span class="breaking-tag">Breaking</span>
+        <div class="breaking-hed">Sources Confirm Aakaash Optimism Remains "Structurally Intact" Ahead of All Upcoming Seasons</div>
+        <div class="byline">SPORTS DESK · JUST IN</div>
+        <p>Multiple sources with direct knowledge of the situation have confirmed that Aakaash Limaye, 21, enters the new sporting calendar with what insiders describe as "unwavering, evidence-resistant confidence" in all eight of his supported teams and athletes. Analysts who reviewed his pre-season outlook described it as "genuinely impressive in its comprehensiveness." All franchises are expected to perform. Sources declined to predict outcomes but noted the subject's optimism appeared "thermodynamically stable." A formal statement from Aakaash's inner circle is expected shortly — possibly during halftime.</p>
+      </div>
+
+      <div class="breaking-item">
+        <span class="breaking-tag">Exclusive</span>
+        <div class="breaking-hed">Historic Multi-Sport Rewatch Conducted: Seven Matches in One Weekend, No Regrets Reported</div>
+        <div class="byline">SPECIAL CORRESPONDENT</div>
+        <p>In what eyewitnesses are calling "an extraordinary exhibition of viewing stamina," Aakaash Limaye last weekend reportedly rewatched a combination of Mumbai Indians highlights, a Manchester United European tie from the archives, two Lakers games, and a Ronnie O'Sullivan century break in a single sitting. Neighbours confirmed they heard "excited commentary" at 3 AM but declined to file a formal complaint, citing what one described as "the authenticity of it." Sports historians are reviewing whether this constitutes a record. Early indications suggest it does.</p>
+      </div>
+
+      <div class="breaking-item">
+        <span class="breaking-tag">Analysis</span>
+        <div class="breaking-hed">Championship Calculations Underway; Subject Seen Consulting Multiple Spreadsheets Simultaneously</div>
+        <div class="byline">DATA CORRESPONDENT</div>
+        <p>In scenes confirmed by multiple witnesses, Aakaash Limaye was observed this week engaged in what sources describe as "a complicated cross-sport championship probability exercise" involving five separate competitions and a notebook that appeared to require colour-coding. Analysts are calling it "unnecessarily detailed" and also "kind of beautiful." The calculations — which reportedly factor in remaining schedules, injury concerns, historical precedent, and what one observer described as "gut feeling, weighted appropriately" — are said to yield uniformly positive conclusions. The methodology has been independently described as "airtight," primarily by Aakaash himself.</p>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 5b: PUBLISHED RESEARCH -->
+    <!-- ============================================================ -->
+    <hr class="section-rule double">
+    <div class="section-head">academia · published works</div>
+    <h2 class="col-head" style="text-align:center; font-size:26px;">From the Archives: The Published Works of<br>Aakaash Limaye, Sports Analyst</h2>
+    <div style="text-align:center;" class="byline">Filed by the Gazette Academic Correspondent · Peer-Reviewed Section</div>
+    <hr class="section-rule thin">
+
+    <div class="cols-2 col-rule">
+      <div>
+        <p class="drop-cap">There are sports fans. There are passionate sports fans. And then — occupying a rarefied tier that this publication has rarely been called upon to document — there are sports fans who publish <em>peer-reviewed research papers</em>. Aakaash Limaye belongs to this last, extraordinarily select category, and it is perhaps the single most clarifying fact about the man.</p>
+
+        <p>To summarise: Aakaash does not simply watch sport. He <em>studies</em> it. Formally. With regression modelling, statistical methodology, comparative analysis, and the kind of academic rigour that gets your work indexed in Scopus. While others were arguing about sports on the internet — which is, let us be honest, most of us — Aakaash was building a body of work.</p>
+
+        <div class="sidebar">
+          <h4>📄 Research Paper I</h4>
+          <p style="font-family:'Oswald',sans-serif; font-size:13px; font-weight:700; color:var(--ink); margin-bottom:4px;">Case Study on VR Technology in the NFL</p>
+          <p style="font-size:11px; color:var(--mid); font-family:'Roboto Condensed',sans-serif; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px;">Approved for Publication · October 2025</p>
+          <p>Focusing on Jayden Daniels and the application of virtual reality training methodologies, this study statistically modelled performance data to understand the measurable impact of VR integration on quarterback development. The research included a comprehensive comparative analysis of QBs across the league — contextualising Daniels' metrics within the broader NFL landscape. The committee notes that Aakaash produced a rigorous NFL analytics paper at a moment when most people his age were simply arguing about quarterback ratings on social media. The bar has been set. It is high.</p>
+        </div>
+
+        <div class="sidebar" style="margin-top:10px;">
+          <h4>📄 Research Paper II</h4>
+          <p style="font-family:'Oswald',sans-serif; font-size:13px; font-weight:700; color:var(--ink); margin-bottom:4px;">Defensive Impact in the NBA: Physical Traits &amp; Statistical Outcomes</p>
+          <p style="font-size:11px; color:var(--mid); font-family:'Roboto Condensed',sans-serif; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px;">Published · Scopus Indexed Journal · December 2024</p>
+          <p>This paper — published in a Scopus-indexed journal, which is not something one accomplishes casually — examined how height, weight, and wingspan affect defensive performance in the NBA using regression modelling. Crucially, it tested the widely-held but poorly-examined belief that physical traits alone determine defensive success, putting the assumption through a rigorous statistical framework. The findings added meaningfully to the academic discourse on basketball analytics. The paper was peer-reviewed. It passed. Aakaash was, at the time of publication, twenty years old.</p>
+        </div>
+      </div>
+
+      <div>
+        <p>Consider what these two papers, taken together, actually represent. One examines an American football innovation using the lens of performance analytics. The other interrogates NBA defensive theory through biometric and statistical data. Between them, they cover two of Aakaash's eight supported sports — and they do so not with the enthusiasm of a fan blog, but with the methodology of a researcher who takes the intellectual dimensions of sport as seriously as the emotional ones.</p>
+
+        <p>This is the detail that elevates the Aakaash Limaye profile from "impressive sports fan" to something genuinely unusual. Fandom, in its purest form, asks you to feel. Research asks you to prove. Aakaash does both, in the same sports, at the same time, without apparently finding any tension between the two.</p>
+
+        <div class="pull-quote">
+          <blockquote>"He published a Scopus-indexed paper on NBA defence at twenty. I was twenty once. I did not do that."</blockquote>
+          <cite>— Sports Analyst, this publication, visibly reconsidering his career choices</cite>
+        </div>
+
+        <p>The VR paper on Jayden Daniels is particularly notable. VR training methodologies in the NFL are an emerging and contested field — the kind of subject that requires both subject-matter knowledge and statistical competence to address credibly. Aakaash brought both. The paper was approved for publication. This is not a minor thing.</p>
+
+        <p>And the NBA paper — analysing the relationship between physical attributes and defensive outcomes using regression — represents exactly the kind of work that sports analytics departments at professional franchises pay considerable salaries for. The Los Angeles Lakers, the Philadelphia Eagles, the franchises Aakaash follows with such devotion: they employ people to do precisely this kind of analysis. They should, at minimum, be aware that one of their most dedicated supporters is already publishing it independently.</p>
+
+        <p>The Gazette has said before that Aakaash is not merely a fan. The research record confirms it, in the most literal academic sense possible. He is a fan <em>and</em> a scholar of the sports he loves. By twenty-one, he has the publications to prove it.</p>
+
+        <table class="stats" style="margin-top:12px;">
+          <thead>
+            <tr><th>Paper</th><th>Sport</th><th>Journal Status</th><th>Published</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>VR Technology in the NFL (Jayden Daniels)</td>
+              <td>NFL</td>
+              <td>Approved for Publication</td>
+              <td>Oct 2025</td>
+            </tr>
+            <tr>
+              <td>Physical Traits &amp; Defensive Impact in the NBA</td>
+              <td>NBA</td>
+              <td>Scopus Indexed Journal</td>
+              <td>Dec 2024</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 6: EXPERT ANALYSIS -->
+    <!-- ============================================================ -->
+    <hr class="section-rule double">
+    <div class="section-head">expert analysis — academic study</div>
+    <h2 class="col-head" style="text-align:center; font-size:26px;">The Limaye Phenomenon: An Academic Study in Multi-Sport Fan Investment</h2>
+    <div style="text-align:center; font-style:italic; font-size:11px; color:var(--mid); font-family:'Roboto Condensed', sans-serif; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px;">Journal of Applied Sports Fandom Studies · Special Edition · Peer Reviewed</div>
+
+    <div class="cols-3 col-rule">
+      <p><strong>Abstract.</strong> This paper examines the case of Aakaash Limaye (Mumbai, India, b. 2004) as a singular example of what the authors term "pan-sport polyvalent fan investment" — the sustained, high-intensity emotional and intellectual engagement across eight distinct sporting disciplines simultaneously. Crucially, the subject is not merely a passive consumer of sport: he is a <em>published researcher</em> in sports analytics, with a Scopus-indexed paper on NBA defensive metrics and a second approved study on VR technology in the NFL. This combination of fan investment and academic output places Limaye in a category the literature has not previously needed to address.</p>
+
+      <p><strong>Introduction.</strong> The sporting world has long assumed that effective fandom operates within constraints. A cricket fan, theory suggests, follows cricket. A football supporter's bandwidth is consumed by football. The international sporting landscape, particularly viewed from India — where cricket functions as something between a religion and a civic duty — might be expected to crowd out competing interests. The case of Aakaash Limaye challenges this assumption comprehensively.</p>
+
+      <p><strong>Methodology.</strong> Subject was observed over an extended period. Data points collected include: response time to breaking sports news across eight disciplines; accuracy of pre-match predictions; demonstrable knowledge depth in each sport; emotional recovery time following a loss; and frequency of unsolicited expert commentary offered to non-sporting parties. The methodology was rigorous. The subject was unaware he was being studied, which is to say he behaves this way all the time regardless.</p>
+
+      <div class="sidebar">
+        <h4>Study Finding: The Time-Zone Matrix</h4>
+        <p>The authors calculate that following IPL (evening IST), Premier League (afternoon IST), NBA (morning IST), NFL (night IST), MLB (morning IST), F1 (variable), and snooker (variable) creates what researchers call "the full 24-hour sporting cycle" — a condition in which, at virtually any moment of any given week, there is a game, race, or match relevant to Aakaash's portfolio. Our finding: this is not considered a problem by the subject. Quite the reverse.</p>
+      </div>
+
+      <p><strong>Findings.</strong> The study identifies three key mechanisms by which Aakaash manages multi-sport investment. First, what the authors term "contextual code-switching" — the ability to shift analytical frameworks seamlessly between a cricket economy of runs-per-ball, an NBA efficiency metric, and an F1 constructor's championship points differential. This is a cognitively demanding skill. Aakaash appears to do it automatically.</p>
+
+      <p>Second, "emotional compartmentalisation with permeable walls" — he is able to be disappointed by one team's result without that disappointment contaminating investment in another sport, while simultaneously allowing a victory in one to amplify enjoyment of an otherwise mixed sporting week. This is sophisticated emotional architecture.</p>
+
+      <p>Third, and most importantly: a deep, genuine <em>love</em> of sport in its many forms. The subject is not following eight sports to be impressive or comprehensive. He follows eight sports because he finds all of them genuinely, authentically compelling. This, the authors conclude, is the prerequisite that cannot be manufactured. The knowledge can be acquired. The time management can be optimised. But the love has to be real. In Aakaash's case, there is no question that it is.</p>
+
+      <p><strong>Conclusion.</strong> The Limaye case challenges prevailing models of fan behaviour and suggests that, for a certain category of individual, sport is not a leisure activity supplementary to life but a rich parallel universe — full of its own language, its own history, its own heroes, and its own capacity to produce some of the greatest emotional experiences a human being can have. The authors recommend further study. They also recommend everybody try it.</p>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 7: POWER RANKINGS -->
+    <!-- ============================================================ -->
+    <hr class="section-rule double">
+    <div class="section-head">power rankings</div>
+    <h2 class="col-head" style="text-align:center; font-size:26px;">The Definitive Power Rankings:<br>Aakaash's Sporting Loves, Ranked</h2>
+    <div style="text-align:center;" class="byline">Disclaimer: All eight ranked equally in Aakaash's heart. This is for editorial purposes only. Mostly.</div>
+    <hr class="section-rule thin">
+
+    <div class="cols-2 col-rule">
+      <div class="rank-item">
+        <div class="rank-num">1</div>
+        <div class="rank-text">
+          <strong>Manchester United — Premier League</strong>
+          <p>The apex. The original. The love that started everything and has never once been questioned, despite — and this paper acknowledges this gently — some seasons that would have tested the faith of a saint. Aakaash has never looked away. Not once. Theatre, history, a badge worth dying for, and the absolute unshakeable certainty that the next great era is always just around the corner. In Manchester United Aakaash does not merely support a football club; he participates in an ongoing civilisational argument about what greatness looks like. He's winning it.</p>
+        </div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-num">2</div>
+        <div class="rank-text">
+          <strong>McLaren — Formula 1</strong>
+          <p>The papaya orange. Unmistakable. Non-negotiable. McLaren carries a legacy so rich — Senna at Monaco, Häkkinen at Suzuka, the cold machine efficiency of the late 1980s — that following them is less a hobby and more a historical education at 340 km/h. The resurgence has been genuinely thrilling, and Aakaash has been present for every qualifying lap, every strategy call, every steward's inquiry that should probably have gone the other way. He called the comeback before it was fashionable. The receipts exist. He will show them to you.</p>
+        </div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-num">3</div>
+        <div class="rank-text">
+          <strong>LeBron James (Technically: Wherever LeBron Is) — NBA</strong>
+          <p>Let us be precise, because precision matters: Aakaash is not, strictly speaking, a Los Angeles Lakers fan. He is a <em>LeBron James</em> fan. A fully committed, franchise-agnostic, jersey-tracking, stat-refreshing <strong>Bronsexual</strong> — and this paper uses that term with the greatest possible respect and zero irony. When LeBron was in Cleveland, Aakaash was in Cleveland in spirit. When LeBron went to Miami, the Heat had a new supporter in Mumbai. When LeBron landed in L.A., the Lakers gained a fan who had been waiting patiently at the arrivals gate. "I don't follow teams," Aakaash has reportedly said. "I follow greatness." The GOAT debate continues. Aakaash's position does not.</p>
+        </div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-num">4</div>
+        <div class="rank-text">
+          <strong>Philadelphia Eagles — NFL</strong>
+          <p>The Eagles. Passionate, fierce, occasionally chaotic, always completely themselves. Aakaash chose Philadelphia at a time when many casual observers were gravitating toward safer, more comfortable NFL allegiances. He chose the fan base that once famously booed Father Christmas — and he did so because authenticity matters. Eagles fans feel things at a frequency that most people reserve for genuine life events. Aakaash recognised his people and went home. Smart, brave, correct.</p>
+        </div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-num">5</div>
+        <div class="rank-text">
+          <strong>Mumbai Indians — IPL</strong>
+          <p>The heartbeat. The hometown club. Five IPL titles, a Wankhede crowd that generates its own weather system, and a franchise that has consistently treated the auction table like a chess grandmaster treats a board. Ranked fifth on this particular list by editorial compulsion alone — in Aakaash's actual chest, the Mumbai Indians occupy a space that predates all rankings, all lists, and all rational frameworks. The paltan runs deep. It always will.</p>
+        </div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-num">6</div>
+        <div class="rank-text">
+          <strong>Roger Federer — Tennis</strong>
+          <p>Twenty Grand Slams. A backhand that resembles calligraphy executed at impossible speed. A retirement ceremony at the Laver Cup that made an entire planet stop and feel something it couldn't quite name. Supporting Federer was never fandom in the conventional sense — it was the recognition of beauty in motion. That career is now concluded. The grief was real. The gratitude is permanent. Some athletes leave a Federer-shaped hole in the calendar that nothing else quite fills. Aakaash knows this well.</p>
+        </div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-num">7</div>
+        <div class="rank-text">
+          <strong>Los Angeles Dodgers — MLB</strong>
+          <p>Perennial contenders, World Series royalty, and a franchise whose blue runs so deep it is practically geological. The Dodgers present a particular challenge for the Mumbai-based fan: games at times that require either heroic insomnia or an extremely understanding alarm clock. Aakaash has demonstrated both. The commitment to baseball from a city where baseball is not even a peripheral conversation is, genuinely, one of the most impressive data points in this entire profile.</p>
+        </div>
+      </div>
+
+      <div class="rank-item">
+        <div class="rank-num">8</div>
+        <div class="rank-text">
+          <strong>Ronnie O'Sullivan — Snooker</strong>
+          <p>Seven world titles. A maximum 147 break completed with the energy of a man who had a slightly more pressing engagement elsewhere. A cue action so technically pure that coaching academies use footage of it the way art schools use the Sistine Chapel. Ranked eighth by the mathematics of this list alone — in terms of sheer <em>spectacle per minute</em>, O'Sullivan is unmatched by anything in this portfolio. Following snooker from Mumbai, at odd hours, for a sport that receives precisely no mainstream attention in India, is an act of connoisseurship. Aakaash is a connoisseur.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 8: AWARDS -->
+    <!-- ============================================================ -->
+    <hr class="section-rule double">
+    <div class="section-head">annual awards ceremony</div>
+    <h2 class="col-head" style="text-align:center; font-size:26px;">The Mumbai Sports Gazette Annual Awards — All Categories: Aakaash Limaye</h2>
+    <hr class="section-rule thin">
+
+    <div class="cols-3 col-rule">
+      <div class="award-item">
+        <div class="award-title">🏆 Fan of the Year</div>
+        <div class="award-winner">Aakaash Limaye</div>
+        <p>The committee notes this decision was unanimous, achieved after a deliberation of approximately eleven seconds. The panel reviewed fan of the year submissions from across eight sports. No other candidate was tracking eight disciplines simultaneously. The award was Aakaash's before the envelopes were opened.</p>
+      </div>
+
+      <div class="award-item">
+        <div class="award-title">🎖️ Lifetime Commitment Award</div>
+        <div class="award-winner">Aakaash Limaye</div>
+        <p>Presented to an individual whose loyalty has been demonstrably unconditional through challenging periods. The committee found no evidence of wavering, no record of a "support gap," and no instance of post-defeat bandwagon abandonment. The award is presented with admiration and the observation that this kind of loyalty is a gift to every club that receives it.</p>
+      </div>
+
+      <div class="award-item">
+        <div class="award-title">🎬 Best Match-Day Ritual</div>
+        <div class="award-winner">Aakaash Limaye</div>
+        <p>The specifics of the match-day ritual are, as with all great rituals, proprietary. What the committee can confirm is that it exists, it is consistent, and sources suggest it involves a preferred viewing position, a strong opinion about commentary quality, and an approach to the final overs/minutes/sets that would make a sports psychologist both concerned and impressed.</p>
+      </div>
+
+      <div class="award-item">
+        <div class="award-title">📊 Scouting Department of the Year</div>
+        <div class="award-winner">Aakaash Limaye (Head of Everything, Published Analyst)</div>
+        <p>The department — staffed entirely by Aakaash — has demonstrated an ability to assess transfer targets, draft picks, race strategies, and auction bids across five sports simultaneously. This year the department distinguished itself further by producing two peer-reviewed sports analytics papers: one Scopus-indexed NBA defensive study and one NFL VR methodology paper approved for publication. The committee notes that no actual team has yet offered Aakaash a role. The committee considers this a significant oversight on the part of multiple franchises and respectfully suggests they get on with it.</p>
+      </div>
+
+      <div class="award-item">
+        <div class="award-title">⚡ Clutch Viewer Award</div>
+        <div class="award-winner">Aakaash Limaye</div>
+        <p>Awarded to the fan who stays until the very end — always. Multiple sources have confirmed that Aakaash has never, not once, switched off a game in which his team was trailing. Whether this reflects indomitable optimism or a constitutionally stubborn refusal to concede, the committee regards it as admirable either way.</p>
+      </div>
+
+      <div class="award-item">
+        <div class="award-title">🌍 Most Impressive Time Zone Navigation</div>
+        <div class="award-winner">Aakaash Limaye</div>
+        <p>A special category created specifically for this year's ceremony. The award recognises an individual who has watched more international sport from Indian Standard Time than can be medically recommended. The committee extends its congratulations and also its concern, though sources indicate the concern is unnecessary.</p>
+      </div>
+
+      <div class="award-item">
+        <div class="award-title">📚 Sports IQ Recognition Award</div>
+        <div class="award-winner">Aakaash Limaye</div>
+        <p>The judges asked a series of sport-specific questions spanning all eight disciplines represented in the subject's portfolio. The committee is not authorised to reveal the score but can confirm it was the kind of result that prompts the panel to look at one another with raised eyebrows and then begin taking notes themselves.</p>
+      </div>
+
+      <div class="award-item">
+        <div class="award-title">🔬 Sports Analytics Research Award (Inaugural)</div>
+        <div class="award-winner">Aakaash Limaye — Published Researcher, Age 20–21</div>
+        <p>Presented for the first time ever, because no previous nominee had qualified. This award recognises a sports fan who has not merely watched sport passionately but has contributed to the academic body of knowledge surrounding it. Aakaash's Scopus-indexed paper on NBA defensive metrics and his VR-in-the-NFL study on Jayden Daniels represent work that professional analytics departments would be proud to claim. The committee created this award specifically for Aakaash and reserves the right to retire it afterwards, on the grounds that the bar it sets is simply unreasonable for anyone else to clear.</p>
+      </div>
+
+      <div class="award-item">
+        <div class="award-title">🎂 Birthday Edition Special Citation</div>
+        <div class="award-winner">Aakaash Limaye — 21st Birthday</div>
+        <p>A singular award, presented once, to a sports fan turning twenty-one who has, in the committee's considered view, already demonstrated more devotion, knowledge, and genuine love of sport than most people accumulate across a lifetime. Happy birthday. The committee expects great things from the next decade. Actually, so does everyone who knows you.</p>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 9: QUOTES -->
+    <!-- ============================================================ -->
+    <hr class="section-rule double">
+    <div class="section-head">voices — what they're saying</div>
+    <h2 class="col-head" style="text-align:center; font-size:22px;">Aakaash Limaye: A Chorus of Admiration</h2>
+    <hr class="section-rule thin">
+
+    <div class="cols-2 col-rule">
+      <div class="quote-item">
+        <p>"I once asked Aakaash what time the NBA finals were on. He told me the tipoff time, the two teams' offensive ratings, the injury reports, and three historical precedents for the matchup. I had asked because I wanted to know if I had time to make tea first. Anyway. He's remarkable."</p>
+        <div class="quote-attr">— Close Friend, identity protected for their own sanity</div>
+      </div>
+
+      <div class="quote-item">
+        <p>"From a pure analytics standpoint, what Aakaash does — maintaining genuine investment across eight competitions with no dilution of quality — is, frankly, a feat we don't fully understand. We've run the numbers. They shouldn't add up. They do."</p>
+        <div class="quote-attr">— Dr. A. Verma, Sports Psychology Department, Fictional University Press</div>
+      </div>
+
+      <div class="quote-item">
+        <p>"Look, I support one team. Aakaash supports eight. I don't understand how he has the emotional bandwidth. I also don't understand how he knows more about my team than I do. Both things are true. I've stopped trying to explain it and started just listening."</p>
+        <div class="quote-attr">— Rival Fan, single-sport division, speaking on condition of anonymity</div>
+      </div>
+
+      <div class="quote-item">
+        <p>"We don't have a formal record of every supporter who has engaged with our franchise, but if we did, and if such records could identify individuals whose commitment was demonstrably exceptional, we would want to know about someone like Aakaash. Supporters like this are why we play."</p>
+        <div class="quote-attr">— Unnamed Executive, composite representation of all eight franchises</div>
+      </div>
+
+      <div class="quote-item">
+        <p>"He texted me about the Federer retirement announcement at 2 AM. The message was seven paragraphs long and entirely coherent. By the fourth paragraph he was citing Wimbledon statistics from 2004. I read all seven paragraphs. That says something about him, and something about me."</p>
+        <div class="quote-attr">— Friend, name withheld by mutual agreement</div>
+      </div>
+
+      <div class="quote-item">
+        <p>"Sports history has always been shaped by the people in the stands — by the ones who show up, who believe, who remember. A fan like Aakaash is not peripheral to the story. He is part of it. Documenting his twenty-first year feels like the obvious thing to do."</p>
+        <div class="quote-attr">— Sports Historian, consulting for this publication</div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 10: EDITORIAL -->
+    <!-- ============================================================ -->
+    <hr class="section-rule double">
+    <div class="section-head">editorial</div>
+
+    <div class="editorial-box">
+      <h2 class="col-head" style="font-size:24px; text-align:center; margin-bottom:8px;">Why Fans Like Aakaash Make Sport Meaningful</h2>
+      <div style="text-align:center;" class="byline">The Editors · The Mumbai Sports Gazette</div>
+      <hr class="section-rule thin">
+
+      <div class="cols-2" style="column-gap: 24px;">
+        <p class="drop-cap">Sport without passion is just arithmetic. It is scores and standings and tables, numbers in a ledger, names in a bracket. The matches happen, the results are recorded, and the archive grows. But it means nothing — or close to nothing — without the people who actually <em>feel</em> it.</p>
+
+        <p>This is not a small thing. We write these words carefully, because the temptation is always to be ironic about sports fandom, to wink at it, to treat passion as slightly embarrassing and investment as something to be explained away with a knowing smile. We reject that tendency entirely. Sport matters because people make it matter. Because there are human beings sitting up at impossible hours watching matches thousands of miles away, because there are friendships forged over shared allegiances, because there are moments — a goal, a six, a breakthrough, a winning putt — that become part of a person's private history, referenced for the rest of their lives.</p>
+
+        <p>Aakaash Limaye represents something we do not see enough of: a fan who takes the job seriously. Who has done the reading, who has earned the opinions, who has put in the emotional investment that genuine fandom requires. And who has done this, it bears repeating, for <em>eight sports</em> simultaneously, from a city that is itself a sporting institution, with the discipline and the curiosity and the love that all of this demands.</p>
+
+        <p>We live in an age that tends to flatten fandom — to turn it into a transaction, a content category, a demographic. Aakaash is the argument against all of that. He follows sport the way it deserves to be followed: completely, historically, affectionately, and with total seriousness about something that is, ultimately, a game. This paradox is precisely the point. It is because sport is a game that it matters. Because there is nothing at stake beyond human achievement and human feeling, the stakes are everything.</p>
+
+        <p>Turning twenty-one is significant for any person. For someone like Aakaash, it is a milestone in a relationship — with teams and athletes and competitions that have been part of his life since he can remember, and that will continue to be for everything that follows. The Mumbai Indians will win again. Manchester United's next great chapter is being written. The Lakers will contend. McLaren will race. O'Sullivan will make centuries that look impossible and look easy in the same breath.</p>
+
+        <p>Aakaash will be there for all of it. That is, in our view, as it should be — and more than that, it is something worth celebrating. Happy birthday. Keep watching. Keep caring. Sport is better because you do.</p>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 11: FINAL PAGE -->
+    <!-- ============================================================ -->
+    <hr class="section-rule double">
+    <div class="section-head">closing page</div>
+
+    <div class="final-quote">
+      <p>"The deepest loyalty in sport is not to a scoreline — it is to the feeling that brought you there in the first place. Champions come and go; trophies are won and lost; players retire and legends fade into the archive. But the person who sat up through the night to watch, who understood what they were watching and why it mattered, who carried eight different sets of colours in their chest and never felt the weight — that person is not a spectator. They are sport itself, choosing to live in a human being for a while."</p>
+      <div class="attr">— The Mumbai Sports Gazette, Special Edition · Published in honour of Aakaash Limaye, 21 · Mumbai, India</div>
+    </div>
+
+    <div style="text-align:center; margin: 10px 0 20px;">
+      <div style="font-family:'Playfair Display', serif; font-size:20px; font-weight:700; color:var(--accent); margin-bottom:4px;">Happy 21st Birthday, Aakaash.</div>
+      <div style="font-family:'Roboto Condensed', sans-serif; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--mid);">Here's to the next 21 seasons. May every team deliver. May every race be won. May every wicket fall your way.</div>
+    </div>
+
+  </div><!-- /body-wrap -->
+
+  <div class="footer-strip">
+    The Mumbai Sports Gazette · Special 21st Birthday Collector's Edition · All Rights Reserved · Not For Sale · Priceless
+  </div>
+
+</div><!-- /newspaper -->
+</body>
+</html>
